@@ -19,9 +19,17 @@ Main = {
       frameWidth: 32,
       frameHeight: 32,
     });
+
+    this.load.spritesheet("dude_fall", "assets/dude/fall.png", {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
   },
 
   create() {
+    // Inputs
+    cursors = this.input.keyboard.createCursorKeys();
+
     // Background
     this.add.image(game_width / 2, game_height / 2, "sky");
     this.physics.world.setBounds(
@@ -34,9 +42,6 @@ Main = {
       false,
       true
     );
-
-    // Inputs
-    cursors = this.input.keyboard.createCursorKeys();
 
     // Platforms
     platforms = this.physics.add.staticGroup();
@@ -52,12 +57,6 @@ Main = {
     // Player
     player = this.physics.add.sprite(100, 450, "dude_idle");
     player.setCollideWorldBounds(true);
-
-    // Interface
-    scoreText = this.add.text(16, 16, "Score: 0", {
-      fontSize: "24px",
-      fill: "#000",
-    });
 
     // Collisions
     this.physics.add.collider(platforms, player);
@@ -100,6 +99,14 @@ Main = {
         end: 0,
       }),
     });
+
+    this.anims.create({
+      key: "fall",
+      frames: this.anims.generateFrameNumbers("dude_fall", {
+        start: 0,
+        end: 0,
+      }),
+    });
   },
 
   update() {
@@ -126,5 +133,13 @@ function move_player(player) {
   if (cursors.up.isDown && player.body.touching.down) {
     console.log("up is pressed");
     player.setVelocityY(player_jump_velocity);
+  }
+
+  if (!player.body.touching.down) {
+    if (player.body.velocity.y < 0) {
+      player.anims.play("jump", true);
+    } else {
+      player.anims.play("fall", true);
+    }
   }
 }

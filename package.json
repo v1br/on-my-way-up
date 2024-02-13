@@ -1,7 +1,7 @@
 {
-  "name": "jump-like-your-life-depends-on-it",
+  "name": "on-my-way-up",
   "version": "1.0.0",
-  "description": "A game built using PhaserJS where you control a player character that must jump like his life depends on it.",
+  "description": "A game built using PhaserJS where you control a player character to go as high up as possible.",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
