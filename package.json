@@ -1,0 +1,24 @@
+{
+  "name": "jump-like-your-life-depends-on-it",
+  "version": "1.0.0",
+  "description": "A game built using PhaserJS where you control a player character that must jump like his life depends on it.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "game",
+    "phaser",
+    "javascript"
+  ],
+  "author": "Vibhor Agrawal",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.3",
+    "express": "^4.18.2"
+  }
+}
