@@ -14,12 +14,14 @@ Main = {
       right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT),
     };
 
+    this.input.addPointer(2);
+
     // Bounds
     this.physics.world.setBounds(
-      world_bounds_left,
-      world_bounds_up,
-      world_bounds_right,
-      world_bounds_down,
+      world_bounds_x,
+      world_bounds_y,
+      world_bounds_width,
+      world_bounds_height,
       true,
       true,
       false,
@@ -31,7 +33,7 @@ Main = {
     bg.setScrollFactor(0);
 
     platforms = this.physics.add.staticGroup();
-    build_platforms(platforms);
+    fruits = this.physics.add.group();
 
     // Player
     player = this.physics.add.sprite(
@@ -44,18 +46,38 @@ Main = {
     // Camera
     cam = this.cameras.main;
     cam.setSize(game_width, game_height);
+    cam.setBounds(
+      camera_bounds_x,
+      camera_bounds_y,
+      camera_bounds_width,
+      camera_bounds_height
+    );
+    cam.startFollow(player);
 
     // Collisions
     this.physics.add.collider(platforms, player);
+    this.physics.add.collider(platforms, fruits);
+    this.physics.add.collider(player, fruits, collect_fruit, null, this);
 
     // Animations
+
+    this.anims.create({
+      key: "strawberry",
+      frames: this.anims.generateFrameNumbers("strawberry", {
+        start: 0,
+        end: 16,
+      }),
+      frameRate: 24,
+      repeat: -1,
+    });
+
     this.anims.create({
       key: "left",
       frames: this.anims.generateFrameNumbers("dude_run", {
         start: 0,
         end: 11,
       }),
-      frameRate: 12,
+      frameRate: 24,
       repeat: -1,
     });
 
@@ -65,7 +87,7 @@ Main = {
         start: 0,
         end: 11,
       }),
-      frameRate: 12,
+      frameRate: 24,
       repeat: -1,
     });
 
@@ -75,7 +97,7 @@ Main = {
         start: 0,
         end: 10,
       }),
-      frameRate: 12,
+      frameRate: 24,
       repeat: -1,
     });
 
@@ -94,6 +116,10 @@ Main = {
         end: 0,
       }),
     });
+
+    // Object constructors
+    build_platforms(platforms);
+    spread_fruits(fruits, "strawberry");
   },
 
   update() {

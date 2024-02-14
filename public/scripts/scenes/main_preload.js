@@ -7,7 +7,13 @@ function main_preload() {
   this.load.image("grass_fill", "assets/tiles/grass_fill.png");
   this.load.image("grass_fill_top", "assets/tiles/grass_fill_top.png");
 
-  // Spritesheets
+  // Fruit sprites
+  this.load.spritesheet("strawberry", "assets/fruits/strawberry.png", {
+    frameWidth: 32,
+    frameHeight: 32,
+  });
+
+  // Player sprites
   this.load.spritesheet("dude_run", "assets/dude/run.png", {
     frameWidth: 32,
     frameHeight: 32,
