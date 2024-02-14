@@ -1,6 +1,3 @@
-// Environment
-const game_width = window.innerWidth > 320 ? 320 : window.innerWidth;
-const game_height = window.innerHeight > 600 ? 600 : window.innerHeight;
 let score = 0;
 let score_label;
 

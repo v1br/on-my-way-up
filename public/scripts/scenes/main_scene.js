@@ -1,62 +1,49 @@
 Main = {
-  preload() {
-    // Backgrounds
-    this.load.image("sky", "assets/tiles/sky.png");
-    this.load.image("ground_grass", "assets/tiles/ground_grass.png");
-
-    // Dude Spritesheet
-    this.load.spritesheet("dude_run", "assets/dude/run.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-
-    this.load.spritesheet("dude_idle", "assets/dude/idle.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-
-    this.load.spritesheet("dude_jump", "assets/dude/jump.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-
-    this.load.spritesheet("dude_fall", "assets/dude/fall.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-  },
+  preload: main_preload,
 
   create() {
     // Inputs
-    cursors = this.input.keyboard.createCursorKeys();
+    controls = {
+      w: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
+      a: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),
+      s: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),
+      d: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),
+      up: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP),
+      left: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT),
+      down: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN),
+      right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT),
+    };
 
-    // Background
-    this.add.image(game_width / 2, game_height / 2, "sky");
+    // Bounds
     this.physics.world.setBounds(
-      0,
-      0,
-      game_width,
-      game_height,
+      world_bounds_left,
+      world_bounds_up,
+      world_bounds_right,
+      world_bounds_down,
       true,
       true,
       false,
       true
     );
 
-    // Platforms
-    platforms = this.physics.add.staticGroup();
+    // World
+    bg = this.add.image(game_width / 2, game_height / 2, "sky");
+    bg.setScrollFactor(0);
 
-    for (i = 0; i < 7; i++) {
-      platforms.create(
-        large_tile_width * i + large_tile_width / 2,
-        game_height - large_tile_height / 2 + 1,
-        "ground_grass"
-      );
-    }
+    platforms = this.physics.add.staticGroup();
+    build_platforms(platforms);
 
     // Player
-    player = this.physics.add.sprite(100, 450, "dude_idle");
+    player = this.physics.add.sprite(
+      player_start_x,
+      player_start_y,
+      "dude_idle"
+    );
     player.setCollideWorldBounds(true);
+
+    // Camera
+    cam = this.cameras.main;
+    cam.setSize(game_width, game_height);
 
     // Collisions
     this.physics.add.collider(platforms, player);
@@ -111,35 +98,6 @@ Main = {
 
   update() {
     move_player(player);
+    move_camera(cam);
   },
 };
-
-function move_player(player) {
-  // Left and Right
-  if (cursors.left.isDown) {
-    player.setVelocityX(-160);
-    player.flipX = true;
-    player.anims.play("left", true);
-  } else if (cursors.right.isDown) {
-    player.setVelocityX(160);
-    player.flipX = false;
-    player.anims.play("right", true);
-  } else {
-    player.setVelocityX(0);
-    player.anims.play("idle", true);
-  }
-
-  // Jump
-  if (cursors.up.isDown && player.body.touching.down) {
-    console.log("up is pressed");
-    player.setVelocityY(player_jump_velocity);
-  }
-
-  if (!player.body.touching.down) {
-    if (player.body.velocity.y < 0) {
-      player.anims.play("jump", true);
-    } else {
-      player.anims.play("fall", true);
-    }
-  }
-}
