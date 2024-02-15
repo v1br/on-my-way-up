@@ -1,6 +1,6 @@
 # Unused Asset Files
-*_default
-*_pixel_adventure
+_default*
+_pixel*
 
 # Logs
 logs
