@@ -7,7 +7,13 @@ function build_platforms(platforms) {
 }
 
 function build_fans(fans) {
-  const fan = fans.create(480, -168, "fan_on");
+  build_fan_area(fans, 480, -168);
+  build_fan_area(fans, 600, -28);
+}
+
+// Function to build a fan
+function build_fan_area(fans, x, y) {
+  const fan = fans.create(x, y, "fan_on");
   fan.anims.play("fan_on");
 }
 

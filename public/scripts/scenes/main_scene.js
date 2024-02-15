@@ -74,5 +74,6 @@ Main = {
   update() {
     move_player(player);
     move_camera(cam);
+    detect_fan(player, fans);
   },
 };
