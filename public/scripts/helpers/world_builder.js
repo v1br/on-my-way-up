@@ -11,6 +11,15 @@ function build_fans(fans) {
   build_fan_area(fans, 600, -28);
 }
 
+function build_trampolines(trampolines) {
+  build_trampoline_area(trampolines, 260, -38);
+}
+
+// Function to build a trampoline
+function build_trampoline_area(trampolines, x, y) {
+  const trampoline = trampolines.create(x, y, "trampoline_idle");
+}
+
 // Function to build a fan
 function build_fan_area(fans, x, y) {
   const fan = fans.create(x, y, "fan_on");

@@ -5,6 +5,25 @@ function add_rectangle(scene, x, y, width, height, fillColor, alpha) {
   return graphics;
 }
 
+function collect_fruit(player, fruit) {
+  fruit.disableBody(true, true);
+}
+
+function bounce_off(player, trampoline) {
+  if (
+    player.body.touching.down &&
+    player.body.y < trampoline.body.y &&
+    Math.abs(player.body.x - trampoline.body.x) <= 16
+  ) {
+    if (!player_on_bounce) {
+      player.body.y -= 6;
+      player_on_bounce = true;
+    }
+    player.body.velocity.y += 1.25 * player_jump_velocity;
+    trampoline.anims.play("trampoline_jump");
+  }
+}
+
 function detect_fan(player, fans) {
   fans.getChildren().forEach((fan) => {
     const ax = Math.abs(player.body.x - fan.x);
@@ -18,7 +37,11 @@ function detect_fan(player, fans) {
       console.log("fan detected!");
       console.log(player.body.velocity.y);
 
-      player.body.velocity.y -= (200 - ay) / 10;
+      if (ay < 100) {
+        player.body.velocity.y = -280;
+      } else {
+        player.body.velocity.y -= (200 - ay) / 8;
+      }
     }
   });
 }

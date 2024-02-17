@@ -7,6 +7,17 @@ function main_preload() {
   this.load.image("grass_fill", "assets/tiles/grass_fill.png");
   this.load.image("grass_fill_top", "assets/tiles/grass_fill_top.png");
 
+  // Trampoline sprites
+  this.load.spritesheet("trampoline_idle", "assets/traps/trampoline/idle.png", {
+    frameWidth: 28,
+    frameHeight: 28,
+  });
+
+  this.load.spritesheet("trampoline_jump", "assets/traps/trampoline/jump.png", {
+    frameWidth: 28,
+    frameHeight: 28,
+  });
+
   // Fan sprites
   this.load.spritesheet("fan_off", "assets/traps/fan/off.png", {
     frameWidth: 24,

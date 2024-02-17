@@ -10,6 +10,24 @@ function animate_fruits(anims) {
   });
 }
 
+function animate_trampolines(anims) {
+  anims.create({
+    key: "trampoline_idle",
+    frames: anims.generateFrameNumbers("trampoline_idle", {
+      start: 0,
+      end: 0,
+    }),
+  });
+
+  anims.create({
+    key: "trampoline_jump",
+    frames: anims.generateFrameNumbers("trampoline_jump", {
+      start: 0,
+      end: 7,
+    }),
+  });
+}
+
 function animate_fans(anims) {
   anims.create({
     key: "fan_off",
