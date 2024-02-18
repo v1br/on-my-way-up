@@ -1,27 +1,27 @@
-# On My Way Up
+# On My Way Up ![frog-icon](https://github.com/VibhorAgrawal2003/On-My-Way-Up/blob/main/public/assets/favicon.png)
 
-"On My Way Up" is a browser game currently in development. In this vertical platformer game, you control a Frog
-and leap past obstacles of various shapes, sizes and functions to reach the top where your friend is waiting for
-you. On your way up, you will come across various kinds of platforms and objects to interact with such as trampolines
-that let you jump higher, fans that push you away from them and spikes that you must avoid.
+Welcome to "On My Way Up" - a vertical platformer browser game currently in development. Take control of a Frog as you navigate past obstacles of various shapes, sizes, and functions to reach the top where your friend awaits. Along your ascent, encounter diverse platforms and interactive objects such as trampolines for extra height, fans that propel you away, and spikes to avoid.
+
+## Tech Stack
+This project leverages Phaser.js for game logic and rendering on canvas via WebGL. It operates on a server powered by Node.js and Express.js.
 
 ## Contributing
 
-To run the project as a developer, follow these steps:
+To get started as a developer, follow these steps:
 
-1. Clone the repository on your machine.
+1. Clone the repository to your local machine.
 ```bash
 git clone https://github.com/VibhorAgrawal2003/On-My-Way-Up/
 ```
 
-2. Install node dependencies.
+2. Install necessary node dependencies.
 ```bash
 npm install
 ```
 
-3. Run the development environment.
+3. Launch the development environment.
 ```bash
 npm run dev
 ```
 
-PRs are always welcome. I will review the PR and merge the branch if it helps improve the game. ^^
+Contributions via pull requests (PRs) are always appreciated. I will promptly review and merge any branches that enhance the game. Thank you for your contributions! ^^
