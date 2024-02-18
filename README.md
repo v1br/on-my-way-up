@@ -23,3 +23,5 @@ npm install
 ```bash
 npm run dev
 ```
+
+PRs are always welcome. I will review the PR and merge the branch if it helps improve the game. ^^
