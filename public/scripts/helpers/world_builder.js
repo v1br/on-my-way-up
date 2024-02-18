@@ -1,18 +1,31 @@
 function build_platforms(platforms) {
   build_platform_base(platforms, 28, 3, -6, 0);
-  build_platform_long(platforms, 3, 400, -140);
-  build_platform_long(platforms, 3, 100, -280);
-  build_platform_long(platforms, 3, 400, -420);
-  build_platform_long(platforms, 3, 100, -560);
+  build_platform_long(platforms, 3, 448, -140);
+  build_platform_long(platforms, 3, 168, -280);
+  build_platform_long(platforms, 3, 448, -420);
+  build_platform_long(platforms, 3, 168, -560);
+  build_platform_long(platforms, 2, 216, -840);
+  build_platform_long(platforms, 2, 360, -980);
+  build_platform_long(platforms, 2, 504, -840);
+  build_platform_long(platforms, 4, 312, -1120);
+  build_platform_long(platforms, 2, 216, -1260);
+  build_platform_long(platforms, 4, 0, -1400);
+
+  // Debug
+  // build_platform_long(platforms, 1, 72, -1588);
+  // build_platform_long(platforms, 1, 72, -1636);
+  // build_platform_long(platforms, 1, 72, -1684);
+  // build_platform_long(platforms, 1, 72, -1732);
+  build_platform_long(platforms, 3, 72, -1780);
 }
 
 function build_fans(fans) {
-  build_fan_area(fans, 480, -168);
-  build_fan_area(fans, 600, -28);
+  build_fan_area(fans, 24, -1428);
 }
 
 function build_trampolines(trampolines) {
-  build_trampoline_area(trampolines, 260, -38);
+  build_trampoline_area(trampolines, 170, -598);
+  build_trampoline_area(trampolines, 530, -878);
 }
 
 // Function to build a trampoline

@@ -5,9 +5,9 @@ const game_height = window.innerHeight > 600 ? 600 : window.innerHeight;
 const world_gravity = 400;
 
 const world_bounds_x = 0;
-const world_bounds_y = -1600;
+const world_bounds_y = -3000;
 const world_bounds_width = 640;
-const world_bounds_height = 1700;
+const world_bounds_height = 3080;
 
 // Player data
 const player_start_x = 320;

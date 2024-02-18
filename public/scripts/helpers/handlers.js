@@ -13,13 +13,13 @@ function bounce_off(player, trampoline) {
   if (
     player.body.touching.down &&
     player.body.y < trampoline.body.y &&
-    Math.abs(player.body.x - trampoline.body.x) <= 16
+    Math.abs(player.body.x - trampoline.body.x) <= 24
   ) {
     if (!player_on_bounce) {
       player.body.y -= 6;
       player_on_bounce = true;
     }
-    player.body.velocity.y += 1.25 * player_jump_velocity;
+    player.body.velocity.y += 1.3 * player_jump_velocity;
     trampoline.anims.play("trampoline_jump");
   }
 }
@@ -38,9 +38,9 @@ function detect_fan(player, fans) {
       console.log(player.body.velocity.y);
 
       if (ay < 100) {
-        player.body.velocity.y = -280;
+        player.body.velocity.y = -400;
       } else {
-        player.body.velocity.y -= (200 - ay) / 8;
+        player.body.velocity.y -= (200 - ay) / 4;
       }
     }
   });
