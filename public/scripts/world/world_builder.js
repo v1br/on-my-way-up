@@ -11,11 +11,6 @@ function build_platforms(platforms) {
   build_platform_long(platforms, 2, 216, -1260);
   build_platform_long(platforms, 4, 0, -1400);
 
-  // Debug
-  // build_platform_long(platforms, 1, 72, -1588);
-  // build_platform_long(platforms, 1, 72, -1636);
-  // build_platform_long(platforms, 1, 72, -1684);
-  // build_platform_long(platforms, 1, 72, -1732);
   build_platform_long(platforms, 3, 72, -1780);
 }
 
@@ -30,7 +25,7 @@ function build_trampolines(trampolines) {
 
 // Function to build a trampoline
 function build_trampoline_area(trampolines, x, y) {
-  const trampoline = trampolines.create(x, y, "trampoline_idle");
+  trampolines.create(x, y, "trampoline_idle");
 }
 
 // Function to build a fan
