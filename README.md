@@ -11,7 +11,7 @@ To get started as a developer, follow these steps:
 
 1. Clone the repository to your local machine.
 ```bash
-git clone https://github.com/VibhorAgrawal2003/On-My-Way-Up/
+git clone https://github.com/VibhorAgrawal2003/On-My-Way-Up.git
 ```
 
 2. Install necessary node dependencies.
