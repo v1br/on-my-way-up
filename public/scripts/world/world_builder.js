@@ -1,17 +1,20 @@
 function build_platforms(platforms) {
-  build_platform_base(platforms, 28, 3, -6, 0);
-  build_platform_long(platforms, 3, 448, -140);
-  build_platform_long(platforms, 3, 168, -280);
-  build_platform_long(platforms, 3, 448, -420);
-  build_platform_long(platforms, 3, 168, -560);
-  build_platform_long(platforms, 2, 216, -840);
-  build_platform_long(platforms, 2, 360, -980);
-  build_platform_long(platforms, 2, 504, -840);
-  build_platform_long(platforms, 4, 312, -1120);
-  build_platform_long(platforms, 2, 216, -1260);
-  build_platform_long(platforms, 4, 0, -1400);
-
-  build_platform_long(platforms, 3, 72, -1780);
+  build_platform_floor(platforms, 28, 3, -6, 0);
+  build_simple_platform(platforms, 3, 1, 448, -140);
+  build_simple_platform(platforms, 3, 1, 168, -280);
+  build_simple_platform(platforms, 3, 1, 448, -420);
+  build_simple_platform(platforms, 3, 1, 168, -560);
+  build_simple_platform(platforms, 2, 2, 216, -840);
+  build_simple_platform(platforms, 2, 1, 360, -980);
+  build_simple_platform(platforms, 2, 2, 504, -840);
+  build_simple_platform(platforms, 4, 1, 312, -1120);
+  build_simple_platform(platforms, 2, 1, 216, -1260);
+  build_simple_platform(platforms, 4, 1, 0, -1400);
+  build_simple_platform(platforms, 4, 3, 72, -1780);
+  build_simple_platform(platforms, 1, 1, 360, -1780);
+  build_simple_platform(platforms, 1, 1, 456, -1500);
+  build_simple_platform(platforms, 1, 1, 552, -1780);
+  build_simple_platform(platforms, 3, 3, 408, -2020);
 }
 
 function build_fans(fans) {
@@ -21,6 +24,7 @@ function build_fans(fans) {
 function build_trampolines(trampolines) {
   build_trampoline_area(trampolines, 170, -598);
   build_trampoline_area(trampolines, 530, -878);
+  build_trampoline_area(trampolines, 458, -1538);
 }
 
 // Function to build a trampoline
@@ -34,32 +38,93 @@ function build_fan_area(fans, x, y) {
   fan.anims.play("fan_on");
 }
 
-// Function to build a long platform
-function build_platform_long(platforms, length, x, y) {
-  platforms.create(x, y, "grass_left");
-  for (i = 1; i < length - 1; i++) {
-    platforms.create(x + i * large_tile_width, y, "grass_top");
+// Function to build a platform
+function build_simple_platform(platforms, length, depth, x, y) {
+  if (depth < 1) {
+    return;
   }
-  platforms.create(x + (length - 1) * large_tile_width, y, "grass_right");
+
+  // Block platform
+  else if (depth === 1 && length === 1) {
+    platforms.create(x, y, "grass").setFrame(3);
+  }
+
+  // Horizontal platform
+  else if (depth === 1) {
+    platforms.create(x, y, "grass").setFrame(0);
+    for (let i = 1; i < length - 1; i++) {
+      platforms.create(x + i * large_tile_width, y, "grass").setFrame(1);
+    }
+    platforms
+      .create(x + (length - 1) * large_tile_width, y, "grass")
+      .setFrame(2);
+  }
+
+  // Thick platform
+  else {
+    platforms.create(x, y, "grass").setFrame(4);
+    for (let i = 1; i < length - 1; i++) {
+      platforms.create(x + i * large_tile_width, y, "grass").setFrame(5);
+    }
+    platforms
+      .create(x + (length - 1) * large_tile_width, y, "grass")
+      .setFrame(6);
+
+    for (j = 1; j < depth - 1; j++) {
+      platforms.create(x, y + j * large_tile_height, "grass").setFrame(8);
+      for (let i = 1; i < length - 1; i++) {
+        platforms
+          .create(x + i * large_tile_width, y + j * large_tile_height, "grass")
+          .setFrame(9);
+      }
+      platforms
+        .create(
+          x + (length - 1) * large_tile_width,
+          y + j * large_tile_height,
+          "grass"
+        )
+        .setFrame(10);
+    }
+
+    platforms
+      .create(x, y + (depth - 1) * large_tile_height, "grass")
+      .setFrame(12);
+    for (let i = 1; i < length - 1; i++) {
+      platforms
+        .create(
+          x + i * large_tile_width,
+          y + (depth - 1) * large_tile_height,
+          "grass"
+        )
+        .setFrame(13);
+    }
+    platforms
+      .create(
+        x + (length - 1) * large_tile_width,
+        y + (depth - 1) * large_tile_height,
+        "grass"
+      )
+      .setFrame(14);
+  }
 }
 
 // Function to build a thick platform as a base
-function build_platform_base(platforms, length, depth, x, y) {
+function build_platform_floor(platforms, length, depth, x, y) {
   for (i = x + 1; i < x + length - 1; i++) {
-    platforms.create(
-      large_tile_width * i + large_tile_width / 2,
-      y,
-      "grass_fill_top"
-    );
+    platforms
+      .create(large_tile_width * i + large_tile_width / 2, y, "grass")
+      .setFrame(5);
   }
 
   for (j = 1; j <= depth; j++) {
     for (i = x + 1; i < x + length - 1; i++) {
-      platforms.create(
-        large_tile_width * i + large_tile_width / 2,
-        y + j * large_tile_height,
-        "grass_fill"
-      );
+      platforms
+        .create(
+          large_tile_width * i + large_tile_width / 2,
+          y + j * large_tile_height,
+          "grass"
+        )
+        .setFrame(9);
     }
   }
 }
