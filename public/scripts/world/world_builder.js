@@ -1,3 +1,5 @@
+// Grouped functions
+
 function build_platforms(platforms) {
   build_platform_floor(platforms, 28, 3, -6, 0);
   build_simple_platform(platforms, 3, 1, 448, -140);
@@ -17,6 +19,10 @@ function build_platforms(platforms) {
   build_simple_platform(platforms, 3, 3, 408, -2020);
 }
 
+function build_spikes(spikes) {
+  build_spike_row(spikes, 5, 300, -32);
+}
+
 function build_fans(fans) {
   build_fan_area(fans, 24, -1428);
 }
@@ -25,6 +31,16 @@ function build_trampolines(trampolines) {
   build_trampoline_area(trampolines, 170, -598);
   build_trampoline_area(trampolines, 530, -878);
   build_trampoline_area(trampolines, 458, -1538);
+}
+
+// Function to place a spike row
+function build_spike_row(spikes, length, x, y) {
+  for (let i = 0; i < length; i++) {
+    spikes
+      .create(x + i * 16, y, "spike")
+      .setSize(16, 4)
+      .setOffset(0, 12);
+  }
 }
 
 // Function to build a trampoline

@@ -14,8 +14,6 @@ Main = {
       right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT),
     };
 
-    // this.input.addPointer(2);
-
     // World
     bg = this.add.image(game_width / 2, game_height / 2, "sky");
     bg.setScrollFactor(0);
@@ -36,6 +34,7 @@ Main = {
     fruits = this.physics.add.staticGroup();
     fans = this.physics.add.staticGroup();
     trampolines = this.physics.add.staticGroup();
+    spikes = this.physics.add.staticGroup();
 
     // Player
     player = this.physics.add.sprite(
@@ -65,6 +64,7 @@ Main = {
     // Collisions
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(player, fans);
+    this.physics.add.collider(player, spikes);
     this.physics.add.collider(player, trampolines, bounce_off, null, this);
     this.physics.add.collider(player, fruits, collect_fruit, null, this);
 
@@ -72,6 +72,7 @@ Main = {
     build_platforms(platforms);
     build_trampolines(trampolines);
     build_fans(fans);
+    build_spikes(spikes);
     spread_fruits(fruits);
   },
 

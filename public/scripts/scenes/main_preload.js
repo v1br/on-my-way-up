@@ -2,7 +2,10 @@ function main_preload() {
   // Sky
   this.load.image("sky", "assets/tiles/sky.png");
 
-  // Terrain
+  // Spike
+  this.load.image("spike", "assets/traps/spikes/idle.png");
+
+  // Platform sprites
   this.load.spritesheet("grass", "assets/tiles/grass_tilemap.png", {
     frameWidth: 48,
     frameHeight: 48,

@@ -11,7 +11,7 @@ function collect_fruit(player, fruit) {
 
 function bounce_off(player, trampoline) {
   if (player.body.touching.down && player.body.y < trampoline.body.y) {
-    player.body.velocity.y += 1.3 * player_jump_velocity;
+    player.body.velocity.y += 1.4 * player_jump_velocity;
     trampoline.anims.play("trampoline_jump");
   }
 }
@@ -30,7 +30,7 @@ function detect_fan(player, fans) {
       console.log(player.body.velocity.y);
 
       if (ay < 100) {
-        player.body.velocity.y = -400;
+        player.body.velocity.y = -600;
       } else {
         player.body.velocity.y -= (200 - ay) / 4;
       }
