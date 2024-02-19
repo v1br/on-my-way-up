@@ -10,15 +10,7 @@ function collect_fruit(player, fruit) {
 }
 
 function bounce_off(player, trampoline) {
-  if (
-    player.body.touching.down &&
-    player.body.y < trampoline.body.y &&
-    Math.abs(player.body.x - trampoline.body.x) <= 24
-  ) {
-    if (!player_on_bounce) {
-      player.body.y -= 6;
-      player_on_bounce = true;
-    }
+  if (player.body.touching.down && player.body.y < trampoline.body.y) {
     player.body.velocity.y += 1.3 * player_jump_velocity;
     trampoline.anims.play("trampoline_jump");
   }

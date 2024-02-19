@@ -1,26 +1,12 @@
 function main_preload() {
+  // Sky
+  this.load.image("sky", "assets/tiles/sky.png");
+
   // Terrain
   this.load.spritesheet("grass", "assets/tiles/grass_tilemap.png", {
     frameWidth: 48,
     frameHeight: 48,
   });
-
-  this.load.image("sky", "assets/tiles/sky.png");
-  // this.load.image("grass_top", "assets/tiles/grass_top.png");
-  // this.load.image("grass_left", "assets/tiles/grass_left.png");
-  // this.load.image("grass_right", "assets/tiles/grass_right.png");
-  // this.load.image("grass_fill", "assets/tiles/grass_fill.png");
-  // this.load.image("grass_fill_top", "assets/tiles/grass_fill_top.png");
-  // this.load.image(
-  //   "grass_fill_top_left",
-  //   "assets/tiles/grass_fill_top_left.png"
-  // );
-  // this.load.image(
-  //   "grass_fill_top_right",
-  //   "assets/tiles/grass_fill_top_right.png"
-  // );
-  // this.load.image("grass_fill_left", "assets/tiles/grass_fill_left.png");
-  // this.load.image("grass_fill_right", "assets/tiles/grass_fill_right.png");
 
   // Trampoline sprites
   this.load.spritesheet("trampoline_idle", "assets/traps/trampoline/idle.png", {

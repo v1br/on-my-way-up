@@ -20,5 +20,3 @@ const large_tile_height = 48;
 
 // Debug data
 const area_opacity = 0.2;
-
-let player_on_bounce = false;

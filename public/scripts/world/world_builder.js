@@ -29,7 +29,7 @@ function build_trampolines(trampolines) {
 
 // Function to build a trampoline
 function build_trampoline_area(trampolines, x, y) {
-  trampolines.create(x, y, "trampoline_idle");
+  trampolines.create(x, y, "trampoline_idle").setSize(12, 4).setOffset(8, 16);
 }
 
 // Function to build a fan

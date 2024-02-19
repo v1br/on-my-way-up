@@ -14,7 +14,7 @@ Main = {
       right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT),
     };
 
-    this.input.addPointer(2);
+    // this.input.addPointer(2);
 
     // World
     bg = this.add.image(game_width / 2, game_height / 2, "sky");
