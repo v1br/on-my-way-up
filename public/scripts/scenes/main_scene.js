@@ -64,7 +64,7 @@ Main = {
     // Collisions
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(player, fans);
-    this.physics.add.collider(player, spikes);
+    this.physics.add.collider(player, spikes, test, null, this);
     this.physics.add.collider(player, trampolines, bounce_off, null, this);
     this.physics.add.collider(player, fruits, collect_fruit, null, this);
 
@@ -82,3 +82,7 @@ Main = {
     detect_fan(player, fans);
   },
 };
+
+function test(player, spike) {
+  console.log("ouch");
+}

@@ -20,7 +20,7 @@ function build_platforms(platforms) {
 }
 
 function build_spikes(spikes) {
-  build_spike_row(spikes, 5, 300, -32);
+  // build_spike_row(spikes, 448, -108, (length = 7), (flip = true));
 }
 
 function build_fans(fans) {
@@ -34,12 +34,22 @@ function build_trampolines(trampolines) {
 }
 
 // Function to place a spike row
-function build_spike_row(spikes, length, x, y) {
-  for (let i = 0; i < length; i++) {
-    spikes
-      .create(x + i * 16, y, "spike")
-      .setSize(16, 4)
-      .setOffset(0, 12);
+function build_spike_row(spikes, x, y, length = 1, flip = false) {
+  if (flip) {
+    for (let i = 0; i < length; i++) {
+      spikes
+        .create(x + i * 16, y, "spike")
+        .setFlip(false, true)
+        .setSize(16, 4)
+        .setOffset(0, -3);
+    }
+  } else {
+    for (let i = 0; i < length; i++) {
+      spikes
+        .create(x + i * 16, y, "spike")
+        .setSize(16, 4)
+        .setOffset(0, 12);
+    }
   }
 }
 

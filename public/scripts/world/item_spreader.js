@@ -17,7 +17,7 @@ function spread_fruits(fruits) {
 
 function spread_fruits_row(fruits, fruit_type, length, gap, x, y) {
   for (i = 0; i < length; i++) {
-    const item = fruits.create(x + gap * i, y, fruit_type);
+    const item = fruits.create(x + gap * i, y, fruit_type).setSize(8, 8);
     item.anims.play(fruit_type, true);
   }
 }
