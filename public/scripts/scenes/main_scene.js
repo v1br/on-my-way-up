@@ -12,6 +12,7 @@ Main = {
       left: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT),
       down: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN),
       right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT),
+      space: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE),
     };
 
     // World
@@ -42,6 +43,7 @@ Main = {
       player_start_y,
       "frog_idle"
     );
+    player.setSize(24, 32);
     player.setCollideWorldBounds(true);
 
     // Camera
@@ -64,7 +66,7 @@ Main = {
     // Collisions
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(player, fans);
-    this.physics.add.collider(player, spikes, test, null, this);
+    this.physics.add.collider(player, spikes, get_hit, null, this);
     this.physics.add.collider(player, trampolines, bounce_off, null, this);
     this.physics.add.collider(player, fruits, collect_fruit, null, this);
 
@@ -82,7 +84,3 @@ Main = {
     detect_fan(player, fans);
   },
 };
-
-function test(player, spike) {
-  console.log("ouch");
-}

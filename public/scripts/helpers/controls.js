@@ -23,21 +23,34 @@ function move_player_drop(player) {
   }
 }
 
-function move_player(player) {
-  if (controls.left.isDown || controls.a.isDown) {
-    move_player_left(player);
-  } else if (controls.right.isDown || controls.d.isDown) {
-    move_player_right(player);
-  } else {
-    move_player_idle(player);
-  }
-
+function move_player_hit(player) {
+  player.setVelocityX(-120);
   if (player.body.touching.down) {
-    if (controls.up.isDown || controls.w.isDown) {
-      player.setVelocityY(player_jump_velocity);
-    }
+    console.log("here");
+    player.setVelocityY(player_jump_velocity * (3 / 4));
+  }
+  player.anims.play("hit", true);
+}
+
+function move_player(player) {
+  if (controls.space.isDown) {
+    move_player_hit(player);
   } else {
-    move_player_drop(player);
+    if (controls.left.isDown || controls.a.isDown) {
+      move_player_left(player);
+    } else if (controls.right.isDown || controls.d.isDown) {
+      move_player_right(player);
+    } else {
+      move_player_idle(player);
+    }
+
+    if (player.body.touching.down) {
+      if (controls.up.isDown || controls.w.isDown) {
+        player.setVelocityY(player_jump_velocity);
+      }
+    } else {
+      move_player_drop(player);
+    }
   }
 }
 

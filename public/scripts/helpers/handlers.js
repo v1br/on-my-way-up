@@ -26,9 +26,6 @@ function detect_fan(player, fans) {
     const c3 = ay < 200;
 
     if (c1 && c2 && c3) {
-      console.log("fan detected!");
-      console.log(player.body.velocity.y);
-
       if (ay < 100) {
         player.body.velocity.y = -600;
       } else {
@@ -36,4 +33,8 @@ function detect_fan(player, fans) {
       }
     }
   });
+}
+
+function get_hit(player, spike) {
+  console.log("ouch");
 }

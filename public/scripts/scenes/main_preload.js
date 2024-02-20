@@ -59,4 +59,9 @@ function main_preload() {
     frameWidth: 32,
     frameHeight: 32,
   });
+
+  this.load.spritesheet("frog_hit", "assets/frog/hit.png", {
+    frameWidth: 32,
+    frameHeight: 32,
+  });
 }

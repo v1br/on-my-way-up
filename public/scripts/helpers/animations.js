@@ -96,4 +96,13 @@ function animate_player(anims) {
       end: 0,
     }),
   });
+
+  anims.create({
+    key: "hit",
+    frames: anims.generateFrameNumbers("frog_hit", {
+      start: 0,
+      end: 6,
+    }),
+    frameRate: 24,
+  });
 }

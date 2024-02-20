@@ -20,7 +20,7 @@ function build_platforms(platforms) {
 }
 
 function build_spikes(spikes) {
-  // build_spike_row(spikes, 448, -108, (length = 7), (flip = true));
+  build_spike_row(spikes, 408, -1892, (length = 7), (flip = true));
 }
 
 function build_fans(fans) {

@@ -11,8 +11,6 @@ function spread_fruits(fruits) {
   spread_fruits_row(fruits, "strawberry", 3, 36, 64, -1440);
   spread_fruits_row(fruits, "strawberry", 5, 36, 70, -1820);
   spread_fruits_row(fruits, "strawberry", 4, 36, 404, -2060);
-
-  // In air
 }
 
 function spread_fruits_row(fruits, fruit_type, length, gap, x, y) {
