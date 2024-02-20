@@ -27,7 +27,7 @@ function detect_fan(player, fans) {
 
     if (c1 && c2 && c3) {
       if (ay < 100) {
-        player.body.velocity.y = -600;
+        player.body.velocity.y = -800;
       } else {
         player.body.velocity.y -= (200 - ay) / 4;
       }

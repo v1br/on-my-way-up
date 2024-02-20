@@ -17,6 +17,8 @@ function build_platforms(platforms) {
   build_simple_platform(platforms, 1, 1, 456, -1500);
   build_simple_platform(platforms, 1, 1, 552, -1780);
   build_simple_platform(platforms, 3, 3, 408, -2020);
+  build_simple_platform(platforms, 1, 1, 648, -1500);
+  build_simple_platform(platforms, 1, 1, 696, -1972);
 }
 
 function build_spikes(spikes) {
@@ -25,6 +27,7 @@ function build_spikes(spikes) {
 
 function build_fans(fans) {
   build_fan_area(fans, 24, -1428);
+  build_fan_area(fans, 648, -1528);
 }
 
 function build_trampolines(trampolines) {
