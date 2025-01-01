@@ -16,6 +16,7 @@ Main = {
     };
 
     // World
+    timer = this.time;
     bg = this.add.image(game_width / 2, game_height / 2, "sky");
     bg.setScrollFactor(0);
 
@@ -45,6 +46,10 @@ Main = {
     );
     player.setSize(24, 32);
     player.setCollideWorldBounds(true);
+    player.rightfacing = true;
+    player.fallleft = false;
+    player.ishurting = false;
+    player.damagedat = 0;
 
     // Camera
     cam = this.cameras.main;
@@ -79,7 +84,19 @@ Main = {
   },
 
   update() {
-    move_player(player);
+    if (controls.space.isDown) {
+      player.fallleft = true;
+      player.ishurting = true;
+      player.damagedat = this.time.now;
+    }
+
+    if (player.ishurting) {
+      if (this.time.now > player.damagedat + 2000) player.ishurting = false;
+      move_player_hit(player);
+    } else {
+      move_player(player);
+    }
+
     move_camera(cam);
     detect_fan(player, fans);
   },
