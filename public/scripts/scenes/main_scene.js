@@ -47,7 +47,6 @@ Main = {
     player.setSize(24, 32);
     player.setCollideWorldBounds(true);
     player.rightfacing = true;
-    player.fallleft = false;
     player.ishurting = false;
     player.damagedat = 0;
 
@@ -85,7 +84,6 @@ Main = {
 
   update() {
     if (controls.space.isDown) {
-      player.fallleft = true;
       player.ishurting = true;
       player.damagedat = this.time.now;
     }

@@ -27,11 +27,7 @@ function move_player_drop(player) {
 
 function move_player_hit(player, direction) {
   direction = (player.rightfacing)? 1 : -1;
-  if (player.fallleft) {
-    player.setVelocityX(-120 * direction);
-  } else {
-    player.setVelocityX(120 * direction);
-  }
+  player.setVelocityX(-120 * direction);
 
   if (player.body.touching.down) {
     player.setVelocityY(player_jump_velocity * (3 / 4));
