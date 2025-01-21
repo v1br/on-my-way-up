@@ -1,8 +1,8 @@
 function main_preload() {
-  // Sky
+  // Background sprites
   this.load.image("sky", "assets/tiles/sky.png");
 
-  // Spike
+  // Hazard sprites
   this.load.image("spike", "assets/traps/spikes/idle.png");
 
   // Platform sprites
@@ -38,6 +38,16 @@ function main_preload() {
     frameWidth: 32,
     frameHeight: 32,
   });
+
+  this.load.spritesheet("melon", "assets/fruits/melon.png", {
+    frameWidth: 32,
+    frameHeight: 32,
+  });
+
+  this.load.spritesheet("pineapple", "assets/fruits/pineapple.png", {
+    frameWidth: 32,
+    frameHeight: 32,
+  })
 
   // Player sprites
   this.load.spritesheet("frog_run", "assets/frog/run.png", {

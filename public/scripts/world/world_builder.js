@@ -2,23 +2,33 @@
 
 function build_platforms(platforms) {
   build_platform_floor(platforms, 28, 3, -6, 0);
+
+  // section A
   build_simple_platform(platforms, 3, 1, 448, -140);
   build_simple_platform(platforms, 3, 1, 168, -280);
   build_simple_platform(platforms, 3, 1, 448, -420);
   build_simple_platform(platforms, 3, 1, 168, -560);
+
+  // section B
   build_simple_platform(platforms, 2, 2, 216, -840);
   build_simple_platform(platforms, 2, 1, 360, -980);
   build_simple_platform(platforms, 2, 2, 504, -840);
   build_simple_platform(platforms, 4, 1, 312, -1120);
   build_simple_platform(platforms, 2, 1, 216, -1260);
   build_simple_platform(platforms, 4, 1, 0, -1400);
+
+  // section C
   build_simple_platform(platforms, 4, 3, 72, -1780);
   build_simple_platform(platforms, 1, 1, 360, -1780);
   build_simple_platform(platforms, 1, 1, 456, -1500);
   build_simple_platform(platforms, 1, 1, 552, -1780);
-  build_simple_platform(platforms, 3, 3, 408, -2020);
   build_simple_platform(platforms, 1, 1, 648, -1500);
   build_simple_platform(platforms, 1, 1, 696, -1972);
+  build_simple_platform(platforms, 3, 3, 408, -2020);
+  build_simple_platform(platforms, 1, 1, 696, -2220);
+
+  // section D
+
 }
 
 function build_spikes(spikes) {

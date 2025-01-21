@@ -8,6 +8,26 @@ function animate_fruits(anims) {
     frameRate: 24,
     repeat: -1,
   });
+
+  anims.create({
+    key: "melon",
+    frames: anims.generateFrameNumbers("melon", {
+      start: 0,
+      end: 16,
+    }),
+    frameRate: 24,
+    repeat: -1,
+  });
+
+  anims.create({
+    key: "pineapple",
+    frames: anims.generateFrameNumbers("pineapple", {
+      start: 0,
+      end: 16,
+    }),
+    frameRate: 24,
+    repeat: -1,
+  });
 }
 
 function animate_trampolines(anims) {
