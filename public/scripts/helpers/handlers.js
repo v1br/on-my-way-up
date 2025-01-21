@@ -36,7 +36,6 @@ function detect_fan(player, fans) {
 }
 
 function get_hit(player, _spike) {
-  console.log("ouch");
   player.ishurting = true;
   player.damagedat = this.time.now;
   this.hurtsound.play();

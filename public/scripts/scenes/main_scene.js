@@ -41,6 +41,7 @@ Main = {
     fans = this.physics.add.staticGroup();
     trampolines = this.physics.add.staticGroup();
     spikes = this.physics.add.staticGroup();
+    saws = this.physics.add.staticGroup();
 
     // Player
     player = this.physics.add.sprite(
@@ -66,14 +67,12 @@ Main = {
     camera.startFollow(player);
 
     // Animations
-    animate_fans(this.anims);
-    animate_trampolines(this.anims);
-    animate_fruits(this.anims);
-    animate_player(this.anims);
+    animate_scene(this.anims);
 
     // Collisions
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(player, fans);
+    this.physics.add.collider(player, saws, get_hit, null, this);
     this.physics.add.collider(player, spikes, get_hit, null, this);
     this.physics.add.collider(player, trampolines, bounce_off, null, this);
     this.physics.add.collider(player, fruits, collect_fruit, null, this);
@@ -83,6 +82,7 @@ Main = {
     build_trampolines(trampolines);
     build_fans(fans);
     build_spikes(spikes);
+    build_saws(saws);
     spread_fruits(fruits);
   },
 

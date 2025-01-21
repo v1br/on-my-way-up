@@ -1,5 +1,3 @@
-// Grouped functions
-
 function build_platforms(platforms) {
   build_platform_floor(platforms, 28, 3, -6, 0);
 
@@ -31,6 +29,10 @@ function build_platforms(platforms) {
 
 }
 
+function build_saws(saws) {
+  build_saw_row(saws, 20, -40);
+}
+
 function build_spikes(spikes) {
   build_spike_row(spikes, 408, -1892, (length = 7), (flip = true));
 }
@@ -44,6 +46,15 @@ function build_trampolines(trampolines) {
   build_trampoline_area(trampolines, 170, -598);
   build_trampoline_area(trampolines, 530, -878);
   build_trampoline_area(trampolines, 458, -1538);
+}
+
+// Function to place a saw row
+function build_saw_row(saws, x, y, length = 1) {
+  for (let i = 0; i < length; i++) {
+    saws
+      .create(x + i * 38, y, "saw_on")
+      .anims.play("saw_on");
+  }
 }
 
 // Function to place a spike row

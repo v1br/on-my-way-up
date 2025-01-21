@@ -11,6 +11,10 @@ function main_preload() {
 
   // Hazard sprites
   this.load.image("spike", "assets/traps/spikes/idle.png");
+  this.load.spritesheet("saw_on", "assets/traps/saw/on.png", {
+    frameWidth: 38,
+    frameHeight: 38,
+  });
 
   // Platform sprites
   this.load.spritesheet("grass", "assets/tiles/grass_tilemap.png", {

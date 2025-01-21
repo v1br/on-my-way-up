@@ -1,4 +1,4 @@
-function animate_fruits(anims) {
+function animate_scene(anims) {
   anims.create({
     key: "strawberry",
     frames: anims.generateFrameNumbers("strawberry", {
@@ -28,9 +28,17 @@ function animate_fruits(anims) {
     frameRate: 24,
     repeat: -1,
   });
-}
 
-function animate_trampolines(anims) {
+  anims.create({
+    key: "saw_on",
+    frames: anims.generateFrameNumbers("saw_on", {
+      start: 0,
+      end: 7,
+    }),
+    frameRate: 24,
+    repeat: -1,
+  });
+
   anims.create({
     key: "trampoline_idle",
     frames: anims.generateFrameNumbers("trampoline_idle", {
@@ -46,9 +54,7 @@ function animate_trampolines(anims) {
       end: 7,
     }),
   });
-}
 
-function animate_fans(anims) {
   anims.create({
     key: "fan_off",
     frames: anims.generateFrameNumbers("fan_off", {
@@ -68,9 +74,7 @@ function animate_fans(anims) {
     frameRate: 24,
     repeat: -1,
   });
-}
 
-function animate_player(anims) {
   anims.create({
     key: "left",
     frames: anims.generateFrameNumbers("frog_run", {
