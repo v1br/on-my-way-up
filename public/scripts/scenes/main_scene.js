@@ -2,8 +2,9 @@ Main = {
   preload: main_preload,
 
   create() {
-    // Inputs
-    controls = {
+
+    // Controls
+    this.controls = {
       w: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
       a: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),
       s: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),
@@ -15,11 +16,14 @@ Main = {
       space: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE),
     };
 
-    // World
-    timer = this.time;
-    bg = this.add.image(game_width / 2, game_height / 2, "sky");
-    bg.setScrollFactor(0);
+    // Sounds
+    this.jumpsound = this.sound.add("a_jump", {volume: 0.05});
+    this.hurtsound = this.sound.add("a_hurt", {volume: 0.05});
 
+    // World
+    this.timer = this.time;
+    this.bg = this.add.image(game_width / 2, game_height / 2, "sky");
+    this.bg.setScrollFactor(0);
     this.physics.world.setBounds(
       world_bounds_x,
       world_bounds_y,
@@ -51,15 +55,15 @@ Main = {
     player.damagedat = 0;
 
     // Camera
-    cam = this.cameras.main;
-    cam.setSize(game_width, game_height);
-    cam.setBounds(
+    camera = this.cameras.main;
+    camera.setSize(game_width, game_height);
+    camera.setBounds(
       world_bounds_x,
       world_bounds_y,
       world_bounds_width,
       world_bounds_height
     );
-    cam.startFollow(player);
+    camera.startFollow(player);
 
     // Animations
     animate_fans(this.anims);
@@ -74,7 +78,7 @@ Main = {
     this.physics.add.collider(player, trampolines, bounce_off, null, this);
     this.physics.add.collider(player, fruits, collect_fruit, null, this);
 
-    // Object constructors
+    // Constructors
     build_platforms(platforms);
     build_trampolines(trampolines);
     build_fans(fans);
@@ -83,19 +87,8 @@ Main = {
   },
 
   update() {
-    if (controls.space.isDown) {
-      player.ishurting = true;
-      player.damagedat = this.time.now;
-    }
-
-    if (player.ishurting) {
-      if (this.time.now > player.damagedat + 2000) player.ishurting = false;
-      move_player_hit(player);
-    } else {
-      move_player(player);
-    }
-
-    move_camera(cam);
+    move_player(this, player);
+    move_camera(camera);
     detect_fan(player, fans);
   },
 };

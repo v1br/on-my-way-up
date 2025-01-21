@@ -1,4 +1,11 @@
 function main_preload() {
+
+  // Background music
+
+  // Sound effects
+  this.load.audio("a_jump", "audio/sounds/jump.wav");
+  this.load.audio("a_hurt", "audio/sounds/hurt.wav");
+
   // Background sprites
   this.load.image("sky", "assets/tiles/sky.png");
 

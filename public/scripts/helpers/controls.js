@@ -35,25 +35,43 @@ function move_player_hit(player, direction) {
   player.anims.play("hit", true);
 }
   
-function move_player(player) {
-  if (controls.left.isDown || controls.a.isDown) {
-    move_player_left(player);
-  } else if (controls.right.isDown || controls.d.isDown) {
-    move_player_right(player);
-  } else {
-    move_player_idle(player);
-  }
+function move_player(scene, player) {
 
+  if (scene.controls.space.isDown) {
+    player.ishurting = true;
+    player.damagedat = scene.time.now;
+    scene.hurtsound.play();
+  }
+  
   if (player.body.touching.down) {
-    if (controls.up.isDown || controls.w.isDown) {
-      player.setVelocityY(player_jump_velocity);
+    if (scene.controls.up.isDown || scene.controls.w.isDown) {
+      scene.jumpsound.play();
     }
+  }
+  
+  if (player.ishurting) {
+    if (scene.time.now > player.damagedat + 2000) player.ishurting = false;
+    move_player_hit(player);
   } else {
-    move_player_drop(player);
+    
+    if (scene.controls.left.isDown || scene.controls.a.isDown) {
+      move_player_left(player);
+    } else if (scene.controls.right.isDown || scene.controls.d.isDown) {
+      move_player_right(player);
+    } else {
+      move_player_idle(player);
+    }
+  
+    if (player.body.touching.down) {
+      if (scene.controls.up.isDown || scene.controls.w.isDown) {
+        player.setVelocityY(player_jump_velocity);
+      }
+    } else {
+      move_player_drop(player);
+    }
   }
 }
 
-
-function move_camera(cam) {
-  cam.setScroll(player.x - game_width / 2, player.y - game_height * (3 / 4));
+function move_camera(camera) {
+  camera.setScroll(player.x - game_width / 2, player.y - game_height * (3 / 4));
 }
