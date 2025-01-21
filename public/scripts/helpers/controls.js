@@ -36,19 +36,6 @@ function move_player_hit(player, direction) {
 }
   
 function move_player(scene, player) {
-
-  if (scene.controls.space.isDown) {
-    player.ishurting = true;
-    player.damagedat = scene.time.now;
-    scene.hurtsound.play();
-  }
-  
-  if (player.body.touching.down) {
-    if (scene.controls.up.isDown || scene.controls.w.isDown) {
-      scene.jumpsound.play();
-    }
-  }
-  
   if (player.ishurting) {
     if (scene.time.now > player.damagedat + 2000) player.ishurting = false;
     move_player_hit(player);
@@ -61,10 +48,11 @@ function move_player(scene, player) {
     } else {
       move_player_idle(player);
     }
-  
+    
     if (player.body.touching.down) {
       if (scene.controls.up.isDown || scene.controls.w.isDown) {
         player.setVelocityY(player_jump_velocity);
+        scene.jumpsound.play();
       }
     } else {
       move_player_drop(player);

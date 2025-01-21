@@ -5,7 +5,7 @@ function add_rectangle(scene, x, y, width, height, fillColor, alpha) {
   return graphics;
 }
 
-function collect_fruit(player, fruit) {
+function collect_fruit(_player, fruit) {
   fruit.disableBody(true, true);
 }
 
@@ -35,6 +35,9 @@ function detect_fan(player, fans) {
   });
 }
 
-function get_hit(player, spike) {
+function get_hit(player, _spike) {
   console.log("ouch");
+  player.ishurting = true;
+  player.damagedat = this.time.now;
+  this.hurtsound.play();
 }
