@@ -73,7 +73,7 @@ Main = {
     // Collisions
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(player, fans);
-    this.physics.add.collider(player, movers);
+    this.physics.add.collider(player, movers, move_along, null, this);
     this.physics.add.collider(player, saws, get_hit, null, this);
     this.physics.add.collider(player, spikes, get_hit, null, this);
     this.physics.add.collider(player, trampolines, bounce_off, null, this);

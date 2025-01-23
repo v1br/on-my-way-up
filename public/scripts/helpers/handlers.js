@@ -5,15 +5,15 @@ function add_rectangle(scene, x, y, width, height, fillColor, alpha) {
   return graphics;
 }
 
-function collect_fruit(_player, fruit) {
-  fruit.disableBody(true, true);
-}
-
 function bounce_off(player, trampoline) {
   if (player.body.touching.down && player.body.y < trampoline.body.y) {
     player.body.velocity.y += 1.4 * player_jump_velocity;
     trampoline.anims.play("trampoline_jump");
   }
+}
+
+function collect_fruit(_player, fruit) {
+  fruit.disableBody(true, true);
 }
 
 function detect_fan(player, fans) {
@@ -39,6 +39,15 @@ function get_hit(player, _spike) {
   player.ishurting = true;
   player.damagedat = this.time.now;
   this.hurtsound.play();
+}
+
+function move_along(player, mover) {
+  if (player.body.touching.down) {
+    if (mover.type === "horizontal")
+      player.setX(player.x + mover.dir);
+    if (mover.type === "vertical")
+      player.setY(player.y - mover.dir);
+  }
 }
 
 function move_camera(camera) {
