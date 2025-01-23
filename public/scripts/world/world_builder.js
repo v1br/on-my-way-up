@@ -31,8 +31,8 @@ function build_platforms(platforms) {
 }
 
 function build_movers(movers) {
-  build_mover_horizontal(movers, 80, -80, 80, 320);
-  build_mover_vertical(movers, 130, -80, -80, -180);
+  // build_mover_horizontal(movers, 80, -80, 80, 320);
+  // build_mover_vertical(movers, 130, -80, -80, -180);
 }
 
 function build_saws(saws) {
