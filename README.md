@@ -15,7 +15,7 @@ The game is designed to run on any standard web server.
 
 The following free assets were used for this game:
 
-* [Josef Pres](https://freesound.org/people/josefpres/) - Tracks for background music
+* [Josef Pres](https://freesound.org/people/josefpres/) - Background music
 
 * [Brackeys Platformer Bundle v1](https://brackeysgames.itch.io/brackeys-platformer-bundle) - Sound effects
 
