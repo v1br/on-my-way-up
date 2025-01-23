@@ -40,6 +40,16 @@ function animate_scene(anims) {
   });
 
   anims.create({
+    key: "mover_on",
+    frames: anims.generateFrameNumbers("mover_on", {
+      start: 0,
+      end: 3,
+    }),
+    frameRate: 24,
+    repeat: -1,
+  });
+
+  anims.create({
     key: "trampoline_idle",
     frames: anims.generateFrameNumbers("trampoline_idle", {
       start: 0,

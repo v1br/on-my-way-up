@@ -9,14 +9,26 @@ function main_preload() {
   // Background sprites
   this.load.image("sky", "assets/tiles/sky.png");
 
-  // Hazard sprites
+  // Trap sprites
   this.load.image("spike", "assets/traps/spikes/idle.png");
+
   this.load.spritesheet("saw_on", "assets/traps/saw/on.png", {
     frameWidth: 38,
     frameHeight: 38,
   });
 
+  this.load.spritesheet("mover_off", "assets/traps/movers/off.png", {
+    frameWidth: 32,
+    frameHeight: 10,
+  });
+
+  this.load.spritesheet("mover_on", "assets/traps/movers/on.png", {
+    frameWidth: 32,
+    frameHeight: 10,
+  });
+
   // Platform sprites
+
   this.load.spritesheet("grass", "assets/tiles/grass_tilemap.png", {
     frameWidth: 48,
     frameHeight: 48,

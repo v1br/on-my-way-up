@@ -59,7 +59,3 @@ function move_player(scene, player) {
     }
   }
 }
-
-function move_camera(camera) {
-  camera.setScroll(player.x - game_width / 2, player.y - game_height * (3 / 4));
-}

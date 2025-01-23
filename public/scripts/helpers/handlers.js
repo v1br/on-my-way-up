@@ -40,3 +40,26 @@ function get_hit(player, _spike) {
   player.damagedat = this.time.now;
   this.hurtsound.play();
 }
+
+function move_camera(camera) {
+  camera.setScroll(player.x - game_width / 2, player.y - game_height * (3 / 4));
+}
+
+function move_platforms(movers) {
+  movers.getChildren().forEach((mover) => {
+
+    if (mover.type === "horizontal") {
+      mover.x += mover.dir;
+      if (mover.x > mover.end || mover.x < mover.start)
+        mover.dir *= -1;
+    }
+    else if (mover.type === "vertical") {
+      mover.y -= mover.dir;
+      if (mover.y < mover.end || mover.y > mover.start)
+        mover.dir *= -1;
+    }
+
+    mover.setPosition(mover.x, mover.y);
+    mover.body.updateFromGameObject();
+  });
+}

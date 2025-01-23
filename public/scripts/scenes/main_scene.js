@@ -40,6 +40,7 @@ Main = {
     fruits = this.physics.add.staticGroup();
     fans = this.physics.add.staticGroup();
     trampolines = this.physics.add.staticGroup();
+    movers = this.physics.add.staticGroup();
     spikes = this.physics.add.staticGroup();
     saws = this.physics.add.staticGroup();
 
@@ -72,6 +73,7 @@ Main = {
     // Collisions
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(player, fans);
+    this.physics.add.collider(player, movers);
     this.physics.add.collider(player, saws, get_hit, null, this);
     this.physics.add.collider(player, spikes, get_hit, null, this);
     this.physics.add.collider(player, trampolines, bounce_off, null, this);
@@ -80,6 +82,7 @@ Main = {
     // Constructors
     build_platforms(platforms);
     build_trampolines(trampolines);
+    build_movers(movers);
     build_fans(fans);
     build_spikes(spikes);
     build_saws(saws);
@@ -88,6 +91,7 @@ Main = {
 
   update() {
     move_player(this, player);
+    move_platforms(movers);
     move_camera(camera);
     detect_fan(player, fans);
   },
