@@ -9,10 +9,10 @@ const world_bounds_width = 720;
 const world_bounds_height = 3080;
 
 // Player data
-const player_start_x = 320;
-const player_start_y = -100;
-// const player_start_x = 400;
-// const player_start_y = -2200;
+// const player_start_x = 320;
+// const player_start_y = -100;
+const player_start_x = 400;
+const player_start_y = -2200;
 const player_jump_velocity = -500;
 
 // Terrain data

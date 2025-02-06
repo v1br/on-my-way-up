@@ -27,12 +27,17 @@ function build_platforms(platforms) {
   build_simple_platform(platforms, 5, 2, 24, -1940);
   
   // section C
+  build_simple_platform(platforms, 1, 1, 144, -2220);
+  build_simple_platform(platforms, 1, 1, 192, -2268);
+  build_simple_platform(platforms, 1, 1, 144, -2316);
+  build_simple_platform(platforms, 1, 1, 528, -2504);
+  build_simple_platform(platforms, 1, 1, 480, -2552);
+  build_simple_platform(platforms, 1, 1, 528, -2600);
 
 }
 
 function build_movers(movers) {
-  // build_mover_horizontal(movers, 80, -80, 80, 320);
-  // build_mover_vertical(movers, 130, -80, -80, -180);
+  build_mover_horizontal(movers, 240, -2316, 240, 576);
 }
 
 function build_saws(saws) {
@@ -55,6 +60,7 @@ function build_trampolines(trampolines) {
   build_trampoline_area(trampolines, 530, -878);
   build_trampoline_area(trampolines, 458, -1538);
   build_trampoline_area(trampolines, 24, -1978);
+  build_trampoline_area(trampolines, 698, -2258)
 }
 
 // Function to place static mover
