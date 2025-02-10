@@ -1,24 +1,25 @@
 {
-  "name": "on-my-way-up",
-  "version": "1.0.0",
-  "description": "A game built using PhaserJS where you control a player character to go as high up as possible.",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
-  },
-  "keywords": [
-    "game",
-    "phaser",
-    "javascript"
-  ],
-  "author": "Vibhor Agrawal",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.0.3"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.3",
-    "express": "^4.18.2"
-  }
+	"name": "on-my-way-up",
+	"version": "1.0.0",
+	"description": "A game built using PhaserJS where you control a player character to go as high up as possible.",
+	"main": "index.js",
+	"scripts": {
+		"dev": "bun run --watch index.js",
+		"start": "bun run index.js",
+		"format": "prettier --write ."
+	},
+	"keywords": [
+		"game",
+		"phaser",
+		"javascript"
+	],
+	"author": "Vibhor Agrawal",
+	"license": "ISC",
+	"devDependencies": {
+		"prettier": "^3.5.0"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.3",
+		"express": "^4.18.2"
+	}
 }

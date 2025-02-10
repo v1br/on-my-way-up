@@ -1,31 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.70.0/phaser.min.js"
+			integrity="sha512-DwXZikcH79iPi4Psc6TuG++FNbSxdM9K8GzovSqHbDOsSurmYHdHc/n3+cTTfW4Z6tsOZODyXwcicb+Pw88a0A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.70.0/phaser.min.js"
-        integrity="sha512-DwXZikcH79iPi4Psc6TuG++FNbSxdM9K8GzovSqHbDOsSurmYHdHc/n3+cTTfW4Z6tsOZODyXwcicb+Pw88a0A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!-- Game Scripts -->
+		<script defer src="scripts/scenes/main_preload.js"></script>
+		<script defer src="scripts/scenes/main_scene.js"></script>
+		<script defer src="scripts/world/item_spreader.js"></script>
+		<script defer src="scripts/world/world_builder.js"></script>
+		<script defer src="scripts/helpers/handlers.js"></script>
+		<script defer src="scripts/helpers/animations.js"></script>
+		<script defer src="scripts/helpers/controls.js"></script>
+		<script defer src="scripts/helpers/data.js"></script>
+		<script defer src="game.js"></script>
 
-    <!-- Game Scripts -->
-    <script defer src="scripts/scenes/main_preload.js"></script>
-    <script defer src="scripts/scenes/main_scene.js"></script>
-    <script defer src="scripts/world/item_spreader.js"></script>
-    <script defer src="scripts/world/world_builder.js"></script>
-    <script defer src="scripts/helpers/handlers.js"></script>
-    <script defer src="scripts/helpers/animations.js"></script>
-    <script defer src="scripts/helpers/controls.js"></script>
-    <script defer src="scripts/helpers/data.js"></script>
-    <script defer src="game.js"></script>
+		<title>On My Way Up</title>
+	</head>
 
-    <title>On My Way Up</title>
-</head>
-
-<body>
-    <div id="game_container"></div>
-</body>
-
+	<body>
+		<div id="game_container"></div>
+	</body>
 </html>

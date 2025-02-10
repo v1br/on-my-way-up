@@ -1,0 +1,23 @@
+# bunfig.toml - Configuration for Bun
+
+[install]
+# Specifies the directory where global packages will be installed
+globalDir = "~/.bun"
+
+[fetch]
+# Number of concurrent fetch requests for dependencies
+concurrency = 10
+
+[compile]
+# Enables minification for bundled files
+minify = true
+
+[test]
+# Controls whether tests run in parallel
+parallel = true
+
+[scripts]
+# Custom script aliases
+dev = "bun run --watch index.js"
+start = "bun run index.js"
+format = "prettier --write ."
