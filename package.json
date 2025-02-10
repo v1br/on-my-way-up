@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "bun run --watch index.js",
 		"start": "bun run index.js",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
 	},
 	"keywords": [
 		"game",
@@ -25,8 +26,6 @@
 		"express": "^4.18.2"
 	},
 	"lint-staged": {
-		"**/*.{js,ts,jsx,tsx,json,md,css}": [
-		  "prettier --write"
-		]
+		"**/*.{js,ts,jsx,tsx,json,md,css}": "prettier --write"
 	}
 }
