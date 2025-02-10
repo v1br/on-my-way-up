@@ -32,10 +32,10 @@ git clone <url> <dirname>
 cd <dirname>
 ```
 
-2. Install necessary node dependencies.
+2. Install necessary dependencies.
 
 ```bash
-npm install
+bun install
 ```
 
 3. Create a new feature branch.
@@ -48,7 +48,7 @@ git checkout <feature>
 4. Launch the development environment.
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 5. Perform changes to add your feature, then commit changes to your branch.
