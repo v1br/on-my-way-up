@@ -72,3 +72,22 @@ function move_platforms(movers) {
     mover.body.updateFromGameObject();
   });
 }
+
+function blink_rocks(rocks) {
+  rocks.getChildren().forEach((rock) => {
+
+    rock.on('animationcomplete-rock_blink', () => {
+      console.log("Blink animation finished");
+      rock.anims.play("rock_idle");
+    });
+
+    console.log("dryness = ", rock.dryeyes);
+    if (rock.dryeyes >= 300) {
+      rock.anims.play("rock_blink");
+      rock.dryeyes = 0;
+    }
+    else {
+      rock.dryeyes += 1;
+    }
+  });
+}

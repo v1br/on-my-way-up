@@ -63,6 +63,16 @@ function build_trampolines(trampolines) {
   build_trampoline_area(trampolines, 698, -2258)
 }
 
+function build_rocks(rocks) {
+  const rock = rocks
+    .create(200, -100, "rock_idle")
+    .setSize(30, 24)
+    .setOffset(6, 6)
+    .anims.play("rock_blink");
+
+  rock.dryeyes = 0;
+}
+
 // Function to place static mover
 function build_mover_static(movers, x, y) {
   const mover = movers

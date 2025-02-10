@@ -50,6 +50,60 @@ function animate_scene(anims) {
   });
 
   anims.create({
+    key: "rock_idle",
+    frames: anims.generateFrameNumbers("rock_idle", {
+      start: 0,
+      end: 0,
+    }),
+    frameRate: 24,
+  });
+
+  anims.create({
+    key: "rock_blink",
+    frames: anims.generateFrameNumbers("rock_blink", {
+      start: 0,
+      end: 3,
+    }),
+    frameRate: 12,
+  });
+
+  anims.create({
+    key: "rock_bottom_hit",
+    frames: anims.generateFrameNumbers("rock_bottom_hit", {
+      start: 0,
+      end: 3,
+    }),
+    frameRate: 24,
+  });
+
+  anims.create({
+    key: "rock_top_hit",
+    frames: anims.generateFrameNumbers("rock_top_hit", {
+      start: 0,
+      end: 3,
+    }),
+    frameRate: 24,
+  });
+
+  anims.create({
+    key: "rock_left_hit",
+    frames: anims.generateFrameNumbers("rock_left_hit", {
+      start: 0,
+      end: 3,
+    }),
+    frameRate: 24,
+  })
+
+  anims.create({
+    key: "rock_right_hit",
+    frames: anims.generateFrameNumbers("rock_right_hit", {
+      start: 0,
+      end: 3,
+    }),
+    frameRate: 24,
+  })
+
+  anims.create({
     key: "trampoline_idle",
     frames: anims.generateFrameNumbers("trampoline_idle", {
       start: 0,

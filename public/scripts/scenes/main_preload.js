@@ -27,8 +27,37 @@ function main_preload() {
     frameHeight: 10,
   });
 
-  // Platform sprites
+  this.load.spritesheet("rock_idle", "assets/traps/rock/idle.png", {
+    frameWidth: 42,
+    frameHeight: 42,
+  });
 
+  this.load.spritesheet("rock_blink", "assets/traps/rock/blink.png", {
+    frameWidth: 42,
+    frameHeight: 42,
+  });
+
+  this.load.spritesheet("rock_bottom_hit", "assets/traps/rock/bottom_hit.png", {
+    frameWidth: 42,
+    frameHeight: 42,
+  });
+
+  this.load.spritesheet("rock_top_hit", "assets/traps/rock/top_hit.png", {
+    frameWidth: 42,
+    frameHeight: 42,
+  });
+
+  this.load.spritesheet("rock_left_hit", "assets/traps/rock/left_hit.png", {
+    frameWidth: 42,
+    frameHeight: 42,
+  });
+
+  this.load.spritesheet("rock_right_hit", "assets/traps/rock/right_hit.png", {
+    frameWidth: 42,
+    frameHeight: 42,
+  });
+
+  // Platform sprites
   this.load.spritesheet("grass", "assets/tiles/grass_tilemap.png", {
     frameWidth: 48,
     frameHeight: 48,

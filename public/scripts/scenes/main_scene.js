@@ -43,6 +43,7 @@ Main = {
     movers = this.physics.add.staticGroup();
     spikes = this.physics.add.staticGroup();
     saws = this.physics.add.staticGroup();
+    rocks = this.physics.add.staticGroup();
 
     // Player
     player = this.physics.add.sprite(
@@ -73,6 +74,7 @@ Main = {
     // Collisions
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(player, fans);
+    this.physics.add.collider(player, rocks);
     this.physics.add.collider(player, movers, move_along, null, this);
     this.physics.add.collider(player, saws, get_hit, null, this);
     this.physics.add.collider(player, spikes, get_hit, null, this);
@@ -86,11 +88,13 @@ Main = {
     build_fans(fans);
     build_spikes(spikes);
     build_saws(saws);
+    build_rocks(rocks);
     spread_fruits(fruits);
   },
 
   update() {
     move_player(this, player);
+    blink_rocks(rocks);
     move_platforms(movers);
     move_camera(camera);
     detect_fan(player, fans);
