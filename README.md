@@ -78,7 +78,7 @@ bun run dev
 
 ```bash
 # [ fork the repository ]
-git clone https://github.com/v1br/on-my-way-up.git && cd on-my-way-up
+git clone https://github.com/user/on-my-way-up.git && cd on-my-way-up
 git branch -b new-feature
 # [ apply your changes ]
 git add changes
