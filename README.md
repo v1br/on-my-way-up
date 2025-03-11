@@ -42,25 +42,22 @@
 
 ---
 
-<p>
-feature highlight:<br/>
-✔️ dynamic camera<br/>
-✔️ multiple entities<br/>
-✔️ modular design<br/>
-✔️ cool level design<br/>
-</p>
+feature highlight:
 
-<p>
-tools & frameworks:<br/>
-📦 <a href="https://phaser.io/">Phaser.js</a> for game logic and rendering on a WebGL-powered canvas.<br/>
-📦 <a href="https://expressjs.com/">Express.js</a> for local hosting and development.<br/>
-</p>
+- dynamic camera 📸
+- multiple entities 🐸
+- modular design 🧑🏼‍💻
+- cool level design 😎
 
-<p>
-asset credit:<br/>
-🎈 <a href="https://pixelfrog-assets.itch.io/pixel-adventure-1">Pixel Adventure 1</a> - spritesheets & tilemaps<br/>
-🎈 <a href="https://brackeysgames.itch.io/brackeys-platformer-bundle">Brackey's Platformer Bundle v1</a> - sound effects<br/>
-</p>
+tools & frameworks:
+
+- <a href="https://phaser.io/">Phaser.js</a> for game logic and rendering on a WebGL-powered canvas.
+- <a href="https://expressjs.com/">Express.js</a> for local hosting and development.
+
+asset credit:
+
+- <a href="https://pixelfrog-assets.itch.io/pixel-adventure-1">Pixel Adventure 1</a> - spritesheets & tilemaps
+- <a href="https://brackeysgames.itch.io/brackeys-platformer-bundle">Brackey's Platformer Bundle v1</a> - sound effects
 
 ---
 
@@ -90,7 +87,8 @@ git push origin new-feature
 # [ create a pull request ]
 ```
 
-[Kindly follow these conventions.](https://www.conventionalcommits.org/en/v1.0.0/)
+> [!IMPORTANT]
+> Please follow conventional commits: https://www.conventionalcommits.org/en/v1.0.0/
 
 ---
 
