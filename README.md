@@ -1,10 +1,6 @@
 <!-- Shields.io badges -->
 
-![GitHub contributors](https://img.shields.io/github/contributors/v1br/on-my-way-up?style=flat-square&color=bdf73e)
-
-![GitHub issues](https://img.shields.io/github/issues-pr/v1br/on-my-way-up?style=flat-square&color=bdf73e)
-
-![GitHub issues](https://img.shields.io/github/issues/v1br/on-my-way-up?style=flat-square&color=bdf73e)
+![GitHub contributors](https://img.shields.io/github/contributors/v1br/on-my-way-up?style=flat-square&color=bdf73e) ![GitHub issues](https://img.shields.io/github/issues-pr/v1br/on-my-way-up?style=flat-square&color=bdf73e) ![GitHub issues](https://img.shields.io/github/issues/v1br/on-my-way-up?style=flat-square&color=bdf73e)
 
 <!-- MAIN SECTION -->
 <br />
